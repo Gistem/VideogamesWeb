@@ -34,9 +34,9 @@ export const addPlatforms = (payload) =>{
 export const searchGame = (name) => async (dispatch) =>{
   
    const response = await axios.get(`http://localhost:3001/videogames?search=${name}`)
-   const juegos = await response.data
+   const games = await response.data
    if(response.status === 200){
-    dispatch({ type: 'SEARCH_GAME', payload: juegos});
+    dispatch({ type: 'SEARCH_GAME', payload: games});
 
 } else {
   dispatch({ type: "SEARCH_GAME", payload: []});
@@ -80,21 +80,49 @@ export const filterOrder = ( payload ) => {
 /*             game.genre.
 console.log(game.genres.map(g=> g.));  /// [{id, name:''},{}]
           return game.genres === type */
+
+        // games.map
+
+
+
 export const filterGenre = ( Games,type ) => {
     return function (dispatch){
         
-        var newGames = Games && Games.filter(vg => vg.genres.includes(type)
-        );
-        console.log(newGames,"jajajajajja")
-        //console.log(newGames,"ayaaaaaaaa")
+        var newGames = Games && Games.filter(game => {
+            let compare = game.genres.map(genre => genre.name) ;
+            if(compare.includes(type)){
+                return game
+            } 
+         })
+        
+        
         return dispatch({type: 'FILTER_GENRE',payload: newGames})
     }
 }
 
-export const filterPlatform = ( payload ) => {
-    return {
-        type: 'FILTER_PLATFORM',
-        payload: payload
+
+export const filterCreated = ( Games, type ) => {
+    return  function ( dispatch ) {
+        if(type === "all"){
+        var createdGame = Games && Games.filter (g => g.created === true)
+            return dispatch({type:"FILTER_CREATED",payload:createdGame})
+        }
+       return dispatch({type:"FILTER_CREATED", payload:Games}) 
+    }
+}
+
+export const filterPlatform = ( Games, type ) => {
+    return function (dispatch) {
+        var newGames = Games && Games.filter(game => {
+            console.log(game.platforms, 'platformsssss')
+            let compare = game.platforms.map(p => p.platform.name);
+            // console.log(compare, 'DAROOOOOOOOOOOOOOOOOOO')
+            // let comparePlatforms = compare.platform.map(p=>p.name);
+            if(compare.includes(type)) {
+                return game
+            }
+        })
+        return dispatch ({ type: 'FILTER_PLATFORM', payload: newGames })
     }
 }
 

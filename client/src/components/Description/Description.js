@@ -12,7 +12,7 @@ const Description = (location) => {
     const { id } = useParams();
     const [data, setData] = useState({});
     const [isLoading, setLoading] = useState(true);
-    console.log('acaaaaaaaaa',data)
+    // console.log('acaaaaaaaaa',data)
     useEffect(() => {
 
         axios.get(`http://localhost:3001/videogames/${id}`)

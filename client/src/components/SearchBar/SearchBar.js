@@ -6,7 +6,7 @@ import {
   clearSearch,
   resetFilters,
 } from "../../Redux/actions/index";
-// import "./searchBar.css";
+
 
 
 const SearchBar = () => {
@@ -16,6 +16,7 @@ const SearchBar = () => {
   const handleInputChange = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
+    return dispatch(searchGame(e.target.value))
   };
 
   return (

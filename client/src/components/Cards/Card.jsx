@@ -35,7 +35,7 @@ const Card = ( {videogame} ) => {
           <p>Hi</p>
           <div className="rating">{videogame.rating}</div>
           <div className="front">
-            <img src={videogame.background_image} width="200px" height="200px" alt="" />
+            <img className='backgroundimg'src={videogame.background_image} width="200px" height="200px" alt="" />
             <h4 className="name">{videogame.name}</h4>
             <div className="stats">
               <div className="released">

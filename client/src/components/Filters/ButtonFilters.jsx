@@ -1,6 +1,6 @@
 
 import React from "react";
-import { filterOrder } from "../../Redux/actions/index";
+import { filterCreated } from "../../Redux/actions/index";
 import { useDispatch,useSelector } from "react-redux";
 import Filters  from "../Filters/Filters.jsx";
 
@@ -32,6 +32,9 @@ const handleF = (type) =>{
           <button
             className="filter-btn"
             onClick={() => handleF(des)}> ↓ </button>
+          {/* <button
+          className="filter-btn"
+          onClick={() => dispatch(filterCreated("all"))}>©</button> */}
         </div>
     </>
   );

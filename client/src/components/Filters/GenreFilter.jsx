@@ -5,11 +5,11 @@ import Filters  from "../Filters/Filters.jsx";
 
 const GenreFilter = () => {
   const dispatch = useDispatch();
-  const [optionGenre, setOptionGenre] = useState("");
+  const [optionGenre, setOptionGenre] = useState(null);
   const [optionPlatform, setoptionPlatform] = useState("");
   const { genres, platforms, filters } = useSelector((store) => store);
 
-  const Games = useSelector(store=> store.videogames);
+  const Games = useSelector(store=> store.allGames);
 
   // useEffect(() => {
   //   setOptionGenre(filters.genre);
@@ -18,11 +18,11 @@ const GenreFilter = () => {
 
 const handleGenre = (e) => {
   setOptionGenre(e.target.value)
-      return dispatch(filterGenre(Games,e.target.value))
+      return dispatch(filterGenre(Games, e.target.value))
 }
 const handlePlatforms = (e) => {
   setoptionPlatform(e.target.value)
-      return dispatch(filterPlatform(Games,e.target.value))
+      return dispatch(filterPlatform(Games, e.target.value))
 }
 
   return (

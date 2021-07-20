@@ -1,5 +1,6 @@
 const initialState = {
     videogames: [],
+    allGames: [],
     search: [],
     genres: [],
     platforms: [],
@@ -20,11 +21,12 @@ const initialState = {
         return {
           ...state,
           videogames: action.payload,
+          allGames: action.payload
         };
       case "SEARCH_GAME":
         return {
           ...state,
-          search: action.payload,
+          videogames: action.payload,
         };
       case "STATE":
         return {
@@ -41,6 +43,11 @@ const initialState = {
           return {
               ...state,
               videogames: action.payload
+          };}
+        case "FILTER_CREATED": {
+          return {
+            ...state,
+            videogames: action.payload
           }
         };
         case "FILTER_GENRE": {
