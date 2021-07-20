@@ -1,0 +1,12 @@
+.videogame {
+  display: grid;
+  border: 1px solid black;
+  width: 200px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.front {
+  width: 200px;
+  height: 200px;
+}
