@@ -1,4 +1,4 @@
-const { Videogame, conn } = require('../../src/db.js');
+const {Genre, Platform, Videogame, conn } = require('../../src/db.js');
 const { expect } = require('chai');
 
 describe('Videogame model', () => {
@@ -15,8 +15,27 @@ describe('Videogame model', () => {
           .catch(() => done());
       });
       it('should work when its a valid name', () => {
-        Recipe.create({ name: 'Super Mario Bros' });
+        Videogame.create({ name: 'Super Mario Bros' });
       });
     });
+
+    describe('Find All Platforms in database', function() {
+      it('should have length 50, this has been pre-charged',  function() {
+        Platform.findAll()
+        .then(function (res){
+          expect(res.body).to.be.have.length(50) 
+        });
+      });
+    });
+
+    describe('Find All Genres in database', function() {
+      it('should have length 19, this has been pre-charged',  function() {
+        Genre.findAll()
+        .then(function (res){
+          expect(res.body).to.be.have.length(19) 
+        });
+      });
+    });
+
   });
 });
