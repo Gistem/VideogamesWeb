@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { filterGenre, filterPlatform } from "../../Redux/actions/index.js";
 import Filters  from "../Filters/Filters.jsx";
 
+import "./Filters.css"
+
 const GenreFilter = () => {
   const dispatch = useDispatch();
   const [optionGenre, setOptionGenre] = useState(null);
@@ -33,9 +35,11 @@ const handlePlatforms = (e) => {
           value={optionGenre}
           onChange={(e) => handleGenre(e)}
         >
-          <option value="" disabled>
-            Genre
-          </option>
+          {/* <option value="" disabled>
+            Genres
+          </option> */}
+          <option value="" disabled
+          >Genres</option>
           <option value="all">All</option>
           {genres.map((genre) => {
             return <option key={genre.name} value={genre.name}>{genre.name} </option>;

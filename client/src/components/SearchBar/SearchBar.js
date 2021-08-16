@@ -7,7 +7,7 @@ import {
   resetFilters,
 } from "../../Redux/actions/index";
 
-
+import "./Selectors.css"
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
@@ -19,23 +19,28 @@ const SearchBar = () => {
     return dispatch(searchGame(e.target.value))
   };
 
+
+const handleSubmit = (e) =>  {
+  e.preventDefault();
+  
+  dispatch(loadingGame(true));
+  if (search.length > 0) {
+    dispatch(searchGame(search));
+    
+    dispatch(resetFilters());
+  } else {
+    dispatch(clearSearch([]));
+    dispatch(resetFilters());
+  }
+  setSearch("");
+  dispatch(loadingGame(false));
+}
+
   return (
     <>
       <div className="search">
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            dispatch(loadingGame(true));
-            if (search.length > 0) {
-              dispatch(searchGame(search));
-              dispatch(resetFilters());
-            } else {
-              dispatch(clearSearch([]));
-              dispatch(resetFilters());
-            }
-            setSearch("");
-            dispatch(loadingGame(false));
-          }}
+          onSubmit={(e) => handleSubmit(e)}
         >
           <input
             type="text"
@@ -45,7 +50,7 @@ const SearchBar = () => {
             value={search}
             onChange={(e) => handleInputChange(e)}
           />
-          <button type="submit">
+          <button className="btnS" type="submit"> SEARCH
           </button>
         </form>
       </div>

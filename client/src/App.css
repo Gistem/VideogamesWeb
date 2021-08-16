@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--clr-bg);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border: 1px solid var(--clr-neon);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-neon);
+  border: var(--clr-neon);
+  color: var(--clr-neon);
+  opacity: 2;
+
+  cursor: pointer;
+  border: currentColor 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  background-color: transparent;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  position: relative;
 }

@@ -19,37 +19,4 @@ export default function Filters(Games,order) {
     };
     dispatch({type:'FILTER_ORDER' , payload: Vg})
   }
-
-
-// desde aca fue la comentada:
-    // if (filters.genre !== "all" && filters.genre.length > 0) {
-    //   filteredGames = filteredGames.map((game) => {
-    //     var status = false;
-    //     game && game.genres.forEach((genre) => {
-    //       if (genre.name === filters.genre) {
-    //         status = true;
-    //       }
-    //     });
-    //     if (status) return game;
-    //     return null
-    //   });
-    //   filteredGames = filteredGames.filter((g) => g !== undefined);
-    // }
-
-
-    // if (filters.platform !== "all"  && filters.platform.length > 0) {
-    //   filteredGames = filteredGames.map((game) => {
-    //     var status = false;
-    //     game.platforms.forEach((platform) => {
-    //       if (platform.name === filters.platform) {
-    //         status = true;
-    //       }
-    //     });
-    //     if (status) return game;
-    //     return null
-    //   });
-    //   filteredGames = filteredGames.filter((g) => g !== undefined);
-    // }
-  
-    // return filteredGames;
   }

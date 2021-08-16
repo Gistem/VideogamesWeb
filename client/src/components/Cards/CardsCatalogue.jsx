@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import Cards from '../Cards/Cards.jsx'
-
+import "./Catalogue.css"
 
 export default function Catalogue() {
  const [ videogames , setVideogames ] = useState([])
@@ -22,7 +22,7 @@ export default function Catalogue() {
   
     return (
         <>{ videogames ?
-        <Cards cards={ videogames } />
+        <Cards className="catalogue" cards={ videogames } />
         : <span>loading</span>}
         </>
     )

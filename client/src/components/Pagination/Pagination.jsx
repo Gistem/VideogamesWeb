@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { paginate } from "../../Redux/actions/index";
-
+import './Pagination.css'
 function Pagination({ cardsPerPage, totalCards }) {
   const dispatch = useDispatch();
   const pageNumbers = [];
@@ -21,18 +21,20 @@ function Pagination({ cardsPerPage, totalCards }) {
     if (page < finalPage) dispatch(paginate(page + 1));
     window.scrollTo({ top: "300px", behavior: "smooth" });
   }
-
+  // function page1(page) {
+  //   if (page === 1)
+  // }
   return (
-    <div>
+    <div className="page">
       <ul className="pagination">
-        <button
-          className="pageButton"
+        {page !== 1 ? <button
+          className="pageButton" 
           onClick={() => previusPage(page)}
-        >{`<`}</button>
+        >{`<`}</button> : <></>}
         {pageNumbers.map((number) => (
           <li
             key={number}
-            className={page === number ? "page-item-select" : "page-item'"}
+            className={page === number ? "page-item-select" : "page-item"}
           >
             <a
               onClick={() => {
@@ -46,10 +48,10 @@ function Pagination({ cardsPerPage, totalCards }) {
             </a>
           </li>
         ))}
-        <button
+        {page >=7 ? <></> : <button
           className="pageButton"
           onClick={() => nextPage(page, Math.ceil(totalCards / cardsPerPage))}
-        >{`>`}</button>
+          >{`>`}</button> }
       </ul>
     </div>
   );

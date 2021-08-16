@@ -10,6 +10,7 @@ const Home = () => {
     return (
         <>
             <div className='home'>
+                <h1>The videogame project</h1>
                     <Link to="/index">                       
                         <button className='btn-home'>►</button>
                     </Link>

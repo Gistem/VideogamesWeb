@@ -1,5 +1,59 @@
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  /* grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 3rem; */
+}
+
+.addgame {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  top: 70px;
+  right: 20px;
+  justify-content: space-evenly;
+  width: 140px;
+  background-color: var(--clr-bg);
+  border-radius: 5px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Lexend", sans-serif;
+  color: #fff;
+
+  margin: 0px 5px;
+}
+
+.divGod {
+  display: flex;
+  flex-direction: row;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--clr-bg);
+}
+
+.selectors {
+  height: 60px;
+  width: 100%;
 }

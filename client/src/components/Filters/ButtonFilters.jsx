@@ -25,7 +25,7 @@ const handleF = (type) =>{
             onClick={() => handleF(az)}> A-Z </button>
           <button
             className="filter-btn"
-            onClick={() => handleF(za)}> ZA </button>
+            onClick={() => handleF(za)}> Z-A </button>
           <button
             className="filter-btn"
             onClick={() => handleF(asc)}> ↑	</button>

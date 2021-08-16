@@ -1,5 +1,69 @@
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
+}
 .cards {
   display: flex;
-  flex-wrap: wrap;
+
   flex-direction: column;
+  /* width: 90%;
+  max-width: 1240px;
+  margin: 0 auto; */
+  width: 100%;
+  height: 100%;
+
+  /* grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px; */
+  background-color: var(--clr-bg);
+}
+.loading {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.lds-hourglass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 20vw;
+  height: 20vh;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 100px;
+  box-sizing: border-box;
+  border: 100px solid var(--clr-neon);
+  border-color: var(--clr-bg) transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+.pagination {
+  display: flex;
+  position: fixed-bottom;
+  width: 300px;
+  justify-content: space-between;
+  bottom: 100px;
+  left: 40%;
+  font-family: "Lexend", sans-serif;
 }

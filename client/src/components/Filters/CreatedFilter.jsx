@@ -20,12 +20,12 @@ const CreatedFilter = () => {
            className="filter-select"
             value={optionCreated}
             onChange={(e) => handleCreated(e)} >
-            <option value="" disabled>
+            {/* <option value="" disabled>
               Created
-            </option>
+            </option> */}
             <option value="all">All</option>
-            <option value={true}>True</option>;
-            <option value={false}>False</option>
+            <option value="true">Created</option>
+            <option value="false">Originals</option>
           </select>
           </div>
       </>

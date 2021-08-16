@@ -2,6 +2,7 @@ const initialState = {
     videogames: [],
     allGames: [],
     search: [],
+    description: undefined,
     genres: [],
     platforms: [],
     loading: false,

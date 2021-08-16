@@ -1,11 +1,12 @@
 import React from "react";
+import './NavBar.css'
 
 const NavBar = () => {
   return (
     <>
       <div className="navBar">
         <div>
-          <h2>Videogames Project</h2>
+          <h4 className='PI'>Videogames Project</h4>
         </div>
       </div>
     </>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 //Actions
 import { clearSearch, loadingGame } from '../../Redux/actions/index.js';
 
-import Card from '../Cards/Card.jsx';
+import Card from '../Cards/Card.js';
 import { filters } from '../Filters/Filters.jsx'
 import Pagination from '../Pagination/Pagination'
 import './Cards.css'
@@ -39,7 +39,9 @@ const Cards = ({cards}) => {
     }, [dispatch])
   
     if (loading) {
-      return <div className="lds-hourglass"></div>
+      return <div className="loading">
+        <div className="lds-hourglass"></div>
+      </div>
     } else {
       return (
         <div className='cards'>
@@ -48,8 +50,9 @@ const Cards = ({cards}) => {
               <Card key={index} videogame={videogame} />
             )
           })}
-  
-          <Pagination cardsPerPage={videogamesPerPage} totalCards={games.length} />
+          
+            <Pagination cardsPerPage={videogamesPerPage} totalCards={games.length} />
+          
         </div>
       )
     }  
