@@ -36,11 +36,9 @@ const handlePlatforms = (e) => {
           onChange={(e) => handleGenre(e)}
         >
           {/* <option value="" disabled>
-            Genres
+          Genres
           </option> */}
-          <option value="" disabled
-          >Genres</option>
-          <option value="all">All</option>
+          <option value="all">Genres</option>
           {genres.map((genre) => {
             return <option key={genre.name} value={genre.name}>{genre.name} </option>;
           })}
@@ -51,10 +49,10 @@ const handlePlatforms = (e) => {
           value={optionPlatform}
           onChange={(e) => handlePlatforms(e)}
         >
-          <option value="" disabled>
+          {/* <option value="" disabled>
             Platforms
-          </option>
-          <option value="all">All</option>
+          </option> */}
+          <option value="all">Platforms</option>
           {platforms.map((platform) => {
             return <option key={platform.name} value={platform.name}>{platform.name} </option>;
           })}

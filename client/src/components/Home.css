@@ -24,6 +24,9 @@ html {
   color: var(--clr-neon);
   background-position: center;
 }
+/* .home img {
+  object-fit: cover;
+} */
 h1 {
   font-family: "Lucida Sans Unicode";
   font-size: 30px;

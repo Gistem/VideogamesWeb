@@ -34,6 +34,8 @@ const Description = (location) => {
   return (
     <>
       <div className="page-container">
+        <div class="lightbar"></div>
+        <div class="top-layer"></div>
         <div className="button">
           {/* BUTTON BACK */}
           {
@@ -42,32 +44,34 @@ const Description = (location) => {
             </button>
           }
         </div>
-        <div className="gameInfo">
-          <div className="information">
-            <h2>{data.name} </h2>
-            <h3>Rating</h3>
-            <h2>{data.rating}</h2>
-            <h3>Released</h3>
-            <p>{data.released}</p>
-            <h3>Platforms</h3>
-            {data.platforms.map((p) => {
-              return <p>{p.name || p.platform.name}</p>;
-            })}
-            <h3>Genres</h3>
-            {data.genres.map((p) => {
-              return <p>{p.name}</p>;
-            })}
-          </div>
-          <div className="imageInfo">
-            <div className="image">
-              <img src={data.background_image} alt="" /> {/* IMAGEN */}
+        <div className="animation">
+          <div className="gameInfo">
+            <div className="information">
+              <h2>{data.name} </h2>
+              <h3>Rating</h3>
+              <h2>{data.rating}</h2>
+              <h3>Released</h3>
+              <p>{data.released}</p>
+              <h3>Platforms</h3>
+              {data.platforms.map((p) => {
+                return <p>{p.name || p.platform.name}</p>;
+              })}
+              <h3>Genres</h3>
+              {data.genres.map((p) => {
+                return <p>{p.name}</p>;
+              })}
+            </div>
+            <div className="imageInfo">
+              <div className="image">
+                <img src={data.background_image} alt="" /> {/* IMAGEN */}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="desc">
-          <p>
-            {parse(`${data.description}`)} {/* DESCRIPTION */}
-          </p>
+          <div className="desc">
+            <p>
+              {parse(`${data.description}`)} {/* DESCRIPTION */}
+            </p>
+          </div>
         </div>
       </div>
     </>

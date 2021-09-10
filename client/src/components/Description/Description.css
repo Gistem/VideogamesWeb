@@ -1,3 +1,12 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: 0;
+}
 .loading {
   display: flex;
   height: 100vh;
@@ -13,6 +22,10 @@
   width: 100wh;
   flex-direction: column;
   background-color: black;
+  overflow: -moz-hidden-unscrollable;
+  background-image: url(./Neon-Wood-Background2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .gameInfo {
   margin-top: 20px;
@@ -21,43 +34,36 @@
   height: 60vh;
   width: 90vh;
 }
-/* #imageInfo {
-  display: flex;
-  text-align: left;
-  height: 70vh;
-  width: 100vw;
-} */
-/* .imageInfo {
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
-} */
+
 .image img {
   width: 30vw;
   height: 60vh;
   object-fit: cover;
   float: right;
 
-  border-radius: 0.25em;
+  /* border-radius: 0.01em; */
   box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
 }
 .imageInfo {
+  /* margin-left: 1%; */
+  /* border-radius: 0.25em; */
   box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
 }
 .desc {
   /* height: 30vh;
   width: 750px; */
   border-radius: 0.25em;
-  padding-top: 3px;
+  padding: 3px;
   box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
   font-family: "Nunito", sans-serif;
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em currentColor;
-  text-align: center;
+  /* text-align: center; */
+  /* padding: 2%;
+  margin: 1%; */
   color: lightpink;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   overflow: auto;
   width: 48.7vw;
   /* margin-left: 27.9%; */
@@ -66,13 +72,14 @@
 .information {
   display: flex;
   flex-direction: column;
-  position: relative;
+  /* position: relative; */
   text-align: center;
   justify-content: space-around;
   height: 100%;
   float: right;
   width: 100vw;
   /* font-family: "Press Start 2P", cursive; */
+  /* margin-right: 1%; */
   border-radius: 0.25em;
   opacity: 1;
   color: #e9edc9;
@@ -82,7 +89,7 @@
 }
 .information h2 {
   display: inline-block;
-  position: relative;
+  /* position: relative; */
 }
 
 .close {
@@ -153,4 +160,75 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.lightbar {
+  /* padding-top: 2%; */
+  animation: animate-light-bar 5s;
+  animation-fill-mode: forwards;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+    0 0 80px #00b3ff, 0 0 120px #00b3ff;
+  height: 1vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.top-layer {
+  animation: animate-top-layer 5s;
+  animation-fill-mode: forwards;
+  animation-direction: top;
+  background-color: #000000;
+  height: 100vh;
+  /* left: 0; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+@keyframes animate-light-bar {
+  0%,
+  5% {
+    transform: scaleX(0) translateY(0);
+  }
+
+  10% {
+    transform: scaleX(1) translateY(0);
+  }
+
+  90% {
+    transform: scaleX(1) translateY(calc(100vh - 5vh));
+  }
+
+  95% {
+    transform: scaleX(0) translateY(99vh);
+  }
+
+  100% {
+    transform: scaleX(0) translateY(100vh);
+  }
+}
+
+@keyframes animate-top-layer {
+  0%,
+  5% {
+    height: 100%;
+  }
+
+  10% {
+    height: 100%;
+  }
+  90% {
+    height: 5%;
+  }
+  95% {
+    height: 0.5%;
+  }
+  100% {
+    height: 0%;
+  }
 }

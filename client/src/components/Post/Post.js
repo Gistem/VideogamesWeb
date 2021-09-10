@@ -16,7 +16,7 @@ const Post = () => {
               return (
                 <div class="check" key={genre.id}>
                   <input type="checkbox" name="genres" value={genre.id} />
-                  <label htmlFor="genres">{genre.name}</label>
+                  <label htmlFor="genres"> {genre.name}</label>
                 </div>
               );
             })}
@@ -78,7 +78,7 @@ const Post = () => {
               return (
                 <div class="check" key={platform.id}>
                   <input type="checkbox" name="platforms" value={platform.id} />
-                  <label htmlFor="platforms">{platform.name}</label>
+                  <label htmlFor="platforms"> {platform.name}</label>
                 </div>
               );
             })}
