@@ -1,0 +1,73 @@
+.errorpage {
+  width: 700px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error404 {
+  color: white;
+  font-family: "Nunito", sans-serif;
+  font-size: 49pt;
+  letter-spacing: 11px;
+  text-shadow: 0px 0px 25px hotpink, 0px 0px 25px rgb(0, 0, 191),
+    0px 0px 25px rgb(0, 0, 191), 0px 0px 25px rgb(0, 0, 191);
+}
+
+#e,
+#t,
+#fo {
+  animation: blink 2s 2;
+  animation-delay: 1s;
+}
+
+@keyframes blink {
+  from {
+    text-shadow: 0px 0px 0px transparent;
+    opacity: 0.3;
+  }
+  25% {
+    text-shadow: 0px 0px 0px transparent;
+    opacity: 0.3;
+  }
+  30% {
+    text-shadow: 0px 0px 0px transparent;
+    opacity: 0.3;
+  }
+  50% {
+    text-shadow: 0px 0px 25px hotpink, 0px 0px 25px rgb(0, 0, 191),
+      0px 0px 25px rgb(0, 0, 191), 0px 0px 25px rgb(0, 0, 191);
+    opacity: 0.7;
+  }
+  75% {
+    text-shadow: 0px 0px 0px transparent;
+    opacity: 0.3;
+  }
+  to {
+    text-shadow: 0px 0px 0px transparent;
+    opacity: 0.3;
+  }
+}
+
+#0,
+#d {
+  animation: flicker 1.7s 1;
+  animation-delay: 4s;
+}
+
+@keyframes flicker {
+  0% {
+    text-shadow: 0px 0px 0px transparent;
+    opacity: 0.3;
+  }
+  50% {
+    text-shadow: 0px 0px 0px transparent;
+    opacity: 0.3;
+  }
+  100% {
+    text-shadow: 0px 0px 25px hotpink, 0px 0px 25px rgb(0, 0, 191),
+      0px 0px 25px rgb(0, 0, 191), 0px 0px 25px rgb(0, 0, 191);
+    opacity: 1;
+  }
+}
