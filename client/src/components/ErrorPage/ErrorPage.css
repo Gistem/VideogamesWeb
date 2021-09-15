@@ -1,20 +1,43 @@
 .errorpage {
-  width: 700px;
-  height: 100px;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: black;
 }
-
+.cartelubication {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .error404 {
   color: white;
   font-family: "Nunito", sans-serif;
   font-size: 49pt;
   letter-spacing: 11px;
-  text-shadow: 0px 0px 25px hotpink, 0px 0px 25px rgb(0, 0, 191),
-    0px 0px 25px rgb(0, 0, 191), 0px 0px 25px rgb(0, 0, 191);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em currentColor;
 }
+.rylost {
+  font-family: "Roboto Mono", monospace;
+  color: white;
 
+  border: solid;
+  margin-bottom: 3%;
+}
+.numbererror {
+  display: flex;
+  flex-direction: row;
+}
+.not {
+  display: flex;
+  flex-direction: row;
+}
+.found {
+  display: flex;
+  flex-direction: row;
+}
 #e,
 #t,
 #fo {
@@ -36,8 +59,7 @@
     opacity: 0.3;
   }
   50% {
-    text-shadow: 0px 0px 25px hotpink, 0px 0px 25px rgb(0, 0, 191),
-      0px 0px 25px rgb(0, 0, 191), 0px 0px 25px rgb(0, 0, 191);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em currentColor;
     opacity: 0.7;
   }
   75% {
@@ -50,9 +72,9 @@
   }
 }
 
-#0,
+#cero,
 #d {
-  animation: flicker 1.7s 1;
+  animation: flicker 1.7s 2;
   animation-delay: 4s;
 }
 
@@ -61,13 +83,17 @@
     text-shadow: 0px 0px 0px transparent;
     opacity: 0.3;
   }
+  5% {
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em currentColor;
+    opacity: 1;
+  }
   50% {
     text-shadow: 0px 0px 0px transparent;
     opacity: 0.3;
   }
+
   100% {
-    text-shadow: 0px 0px 25px hotpink, 0px 0px 25px rgb(0, 0, 191),
-      0px 0px 25px rgb(0, 0, 191), 0px 0px 25px rgb(0, 0, 191);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em currentColor;
     opacity: 1;
   }
 }

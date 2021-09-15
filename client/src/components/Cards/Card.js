@@ -9,20 +9,20 @@ const Card = ({ videogame }) => {
         <div className="carta" key={videogame.id}>
           <img src={videogame.background_image} alt="" />
           <div className="descripcion">
-            <h1>{videogame.name}</h1>
+            <h2 className="vgname">{videogame.name}</h2>
             <h3>Rating: {videogame.rating}</h3>
             <h3>Released: {videogame.released}</h3>
-            <div>
+            {/* <div>
               {videogame.platforms &&
-                videogame.platforms.map((g) => {
+                videogame.platforms.map((p) => {
                   {
                     // if (g.name === "PC") {
-                    return <span className="tooltiptext">{g.name}</span>;
+                    return <div className="tooltiptext">{p.name}</div>;
                   }
                   //   return <span className="tooltiptext">{g.name}</span>;
                   // }
                 })}
-            </div>
+            </div> */}
             <div className="genres">
               Genres:
               {videogame.genres &&

@@ -8,21 +8,21 @@ const Post = () => {
 
   return (
     <>
-      <div class="post">
-        <div class="genresx">
-          <p class="title">Select genres</p>
-          <div class="genres-box">
-            {genres.map((genre) => {
-              return (
-                <div class="check" key={genre.id}>
-                  <input type="checkbox" name="genres" value={genre.id} />
-                  <label htmlFor="genres"> {genre.name}</label>
-                </div>
-              );
-            })}
+      <form action="http://localhost:3001/videogames" method="POST">
+        <div class="post">
+          <div class="genresx">
+            <p class="title">Select genres</p>
+            <div class="genres-box">
+              {genres.map((genre) => {
+                return (
+                  <div class="check" key={genre.id}>
+                    <input type="checkbox" name="genres" value={genre.id} />
+                    <label htmlFor="genres"> {genre.name}</label>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-        <form action="http://localhost:3001/videogames" method="POST">
           <div className="write">
             <div class="formContainer">
               <div>
@@ -70,21 +70,25 @@ const Post = () => {
               </div>
             </div>
           </div>
-        </form>
-        <div class="platformsx">
-          <p class="title">Select platforms</p>
-          <div class="platforms-box">
-            {platforms.map((platform) => {
-              return (
-                <div class="check" key={platform.id}>
-                  <input type="checkbox" name="platforms" value={platform.id} />
-                  <label htmlFor="platforms"> {platform.name}</label>
-                </div>
-              );
-            })}
+          <div class="platformsx">
+            <p class="title">Select platforms</p>
+            <div class="platforms-box">
+              {platforms.map((platform) => {
+                return (
+                  <div class="check" key={platform.id}>
+                    <input
+                      type="checkbox"
+                      name="platforms"
+                      value={platform.id}
+                    />
+                    <label htmlFor="platforms"> {platform.name}</label>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </>
   );
 };

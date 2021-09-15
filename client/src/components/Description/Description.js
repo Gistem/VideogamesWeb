@@ -62,9 +62,7 @@ const Description = (location) => {
               })}
             </div>
             <div className="imageInfo">
-              <div className="image">
-                <img src={data.background_image} alt="" /> {/* IMAGEN */}
-              </div>
+              <img src={data.background_image} alt="" /> {/* IMAGEN */}
             </div>
           </div>
           <div className="desc">
