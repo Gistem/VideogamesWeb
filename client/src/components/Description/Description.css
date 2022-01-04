@@ -205,9 +205,12 @@
   90% {
     transform: scaleX(1) translateY(calc(100vh - 5vh));
   }
+  90.1% {
+    transform: scaleX(0);
+  }
 
   95% {
-    transform: scaleX(1) translateY(99vh);
+    transform: scaleX(0) translateY(99vh);
   }
 
   100% {
